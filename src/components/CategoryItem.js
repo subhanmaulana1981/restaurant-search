@@ -6,18 +6,27 @@ import {
 } from "react-native";
 import { elevation } from "../common/styles";
 
-export default function CategoryItem(props) {
-    console.log(props);
-    
+export default function CategoryItem({ name, imageUrl, index }) {
+    // console.log(props);
+
     return (
-      <View style={ [styles.container, styles.elevation] }>
-        <View style={ styles.imageContainer }>
+      <View style={[ 
+            styles.container, 
+            styles.elevation,
+            index === 0 ? 
+            { marginLeft: 25 } :
+            { marginLeft: 15 }
+        ]}
+      >
+        <View style={ styles.imageContainer }> 
             <Image 
                 style={ styles.image }
-                source={ require("../assets/images/burger.png")}
+                source={ imageUrl }
             />
         </View>
-        <Text style={ styles.header }>Burger</Text>
+        <Text style={ styles.header }>
+            { name }
+        </Text>
       </View>  
     );
 }
