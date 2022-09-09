@@ -42,7 +42,7 @@ export default function App() {
       <View>
         <FlatList 
           data={ commonCategories }
-          renderItem={({item, index}) => {
+          renderItem={({ item, index }) => {
             // console.log({item});
 
             return <CategoryItem 
