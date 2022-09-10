@@ -3,10 +3,11 @@ import {
     Text, 
     Image, 
     StyleSheet 
-} from "react-native"
+} from "react-native";
 import { elevation } from "../common/styles";
+import { withNavigation } from "react-navigation";
 
-export default function RestaurantItem({ restaurant }) {
+function RestaurantItem({ restaurant }) {
     return (
         <View style={[ styles.elevation, styles.container ]}>
             <Image 
@@ -67,3 +68,5 @@ const styles = StyleSheet.create({
     },
 
 });
+
+export default withNavigation(RestaurantItem);
