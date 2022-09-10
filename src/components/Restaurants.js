@@ -7,12 +7,31 @@ import yelp from "../api/yelp";
 
 export default function Restaurants() {
 
-    const searchRestaurants = async () => {
+    const searchTodos = async () => {
+        const response = await yelp.get("/todos", {
+            params: {
+                limit: 1,
+            }
+        });
+
+        console.log(response);
+    }
+
+    searchTodos();
+
+    /* const searchRestaurants = async () => {
         const response = await yelp.get("/search", {
+            params: {
+                limit: 1,
+                term: "Dessert",
+                location: "Toronto"
+            }
 
         });
         console.log(response);
     }
+
+    searchRestaurants(); */
 
     return (
         <View style={ styles.container }>
