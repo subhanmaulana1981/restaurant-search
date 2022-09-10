@@ -2,7 +2,6 @@ import { View, StyleSheet, Text } from "react-native";
 import yelp from "../api/yelp";
 
 export default function Restaurants() {
-
   /* const searchTodos = async () => {
     const response = await yelp.get("/todos/1", {
     //   params: {
@@ -16,18 +15,17 @@ export default function Restaurants() {
   searchTodos(); */
 
   const searchRestaurants = async () => {
-        const response = await yelp.get("/search", {
-            params: {
-                limit: 1,
-                term: "Dessert",
-                location: "Toronto"
-            }
+    const response = await yelp.get("/search", {
+      params: {
+        limit: 1,
+        term: "Dessert",
+        location: "Toronto",
+      },
+    });
+    console.log(response);
+  };
 
-        });
-        console.log(response);
-    }
-
-    searchRestaurants();
+  // searchRestaurants();
 
   return (
     <View style={styles.container}>
@@ -47,6 +45,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     paddingBottom: 10,
-    height: 100,
+    // leave it for now
+    height: 100, 
   },
 });
