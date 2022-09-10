@@ -13,6 +13,10 @@ const navigator = createStackNavigator(
     defaultNavigationOptions: {
       title: "BusinessSearch",
       headerTitleAlign: "center",
+      headerStyle: {
+        backgroundColor: "rgb(0, 51, 153)",
+      },
+      headerTintColor: "white",
     }
   }
 );

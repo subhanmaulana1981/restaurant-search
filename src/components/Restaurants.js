@@ -24,11 +24,11 @@ export default function Restaurants({ term }) {
   searchTodos(); */
 
   const [{ data, loading, error }, searchRestaurants] = useRestaurants();
-  /* useEffect(() => {
+  useEffect(() => {
     searchRestaurants(term);
   }, [term]);
 
-  console.log({data: data, loading, error}); */
+  console.log({data: data, loading, error});
 
   if (loading) 
     return (
