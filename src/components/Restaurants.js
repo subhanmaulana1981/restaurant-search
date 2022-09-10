@@ -17,9 +17,9 @@ export default function Restaurants() {
   const searchRestaurants = async () => {
     const response = await yelp.get("/search", {
       params: {
-        limit: 1,
+        limit: 15,
         term: "Dessert",
-        location: "Toronto",
+        location: "Toronto"
       },
     });
     console.log(response);
