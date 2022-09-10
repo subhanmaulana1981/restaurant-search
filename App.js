@@ -4,6 +4,7 @@ import CategoryItem from './src/components/CategoryItem';
 import Header from './src/components/Header';
 import Search from './src/components/Search';
 import { useState } from 'react';
+import Restaurants from './src/components/Restaurants';
 
 
 export default function App() {
@@ -71,6 +72,7 @@ export default function App() {
           keyExtractor={(category) => category.name}
         />
       </View>
+      <Restaurants />
       <StatusBar />
 
     </View>
