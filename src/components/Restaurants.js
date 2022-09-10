@@ -3,19 +3,19 @@ import yelp from "../api/yelp";
 
 export default function Restaurants() {
 
-  const searchTodos = async () => {
+  /* const searchTodos = async () => {
     const response = await yelp.get("/todos/1", {
-      params: {
-        limit: 1
-      },
+    //   params: {
+    //     limit: 1,
+    //   },
     });
 
     console.log(response);
   };
 
-  searchTodos();
+  searchTodos(); */
 
-  /* const searchRestaurants = async () => {
+  const searchRestaurants = async () => {
         const response = await yelp.get("/search", {
             params: {
                 limit: 1,
@@ -27,7 +27,7 @@ export default function Restaurants() {
         console.log(response);
     }
 
-    searchRestaurants(); */
+    searchRestaurants();
 
   return (
     <View style={styles.container}>
