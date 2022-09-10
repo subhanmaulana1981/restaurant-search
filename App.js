@@ -3,8 +3,15 @@ import { View, FlatList } from 'react-native';
 import CategoryItem from './src/components/CategoryItem';
 import Header from './src/components/Header';
 import Search from './src/components/Search';
+import { useState } from 'react';
+
 
 export default function App() {
+
+  // let term = "Burger";
+
+  // State management
+  const [term, setTerm] = useState("");
 
   const commonCategories = [
     {
@@ -34,11 +41,17 @@ export default function App() {
 
   ];
 
+  // setTimeout(() => {
+  //   console.log("Initial term is: ", term);
+  //   setTerms("Pizza");
+  //   console.log("After changed the term is now: ", term);
+  // }, 3000);
+
   return (
     <View>
 
       <Header />
-      <Search />
+      <Search setTerm={ setTerm } />
       <View>
         <FlatList 
           data={ commonCategories }
@@ -49,7 +62,8 @@ export default function App() {
               name={ item.name }
               imageUrl={ item.imageUrl }
               index={ index }
-          
+              active={ item.name === term }
+              handlePress={() => setTerm(item.name)}
             />
           }}
           horizontal={ true }

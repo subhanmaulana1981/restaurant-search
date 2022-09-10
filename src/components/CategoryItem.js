@@ -2,32 +2,47 @@ import {
     View, 
     Text, 
     StyleSheet,
-    Image 
+    Image,
+    Button,
+    TouchableOpacity 
 } from "react-native";
 import { elevation } from "../common/styles";
 
-export default function CategoryItem({ name, imageUrl, index }) {
+export default function CategoryItem({ 
+    name, 
+    imageUrl, 
+    index, 
+    active,
+    handlePress  
+}) {
     // console.log(props);
 
     return (
-      <View style={[ 
-            styles.container, 
-            styles.elevation,
-            index === 0 ? 
-            { marginLeft: 25 } :
-            { marginLeft: 15 }
-        ]}
-      >
-        <View style={ styles.imageContainer }> 
-            <Image 
-                style={ styles.image }
-                source={ imageUrl }
-            />
-        </View>
-        <Text style={ styles.header }>
-            { name }
-        </Text>
-      </View>  
+        <TouchableOpacity
+            onPress={ handlePress }
+        >
+            <View style={[ 
+                    styles.container, 
+                    styles.elevation,
+                    index === 0 
+                        ? { marginLeft: 25 } 
+                        : { marginLeft: 15 },
+                    active 
+                        ? { backgroundColor: "rgb(241, 186, 87)" }
+                        : { backgroundColor: "white" }
+                ]}
+            >
+                <View style={ styles.imageContainer }> 
+                    <Image 
+                        style={ styles.image }
+                        source={ imageUrl }
+                    />
+                </View>
+                <Text style={ styles.header }>
+                    { name }
+                </Text>
+            </View>  
+        </TouchableOpacity>
     );
 }
 
