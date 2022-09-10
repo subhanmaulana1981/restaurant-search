@@ -13,11 +13,11 @@ export default function RestaurantItem({ restaurant }) {
                 source={{ uri: restaurant.image_url }}
                 style={ styles.image } 
             />
-            <View>
-                <Text>{ restaurant.name }</Text>
+            <View style={ styles.infoContainer }>
+                <Text style={ styles.header }>{ restaurant.name }</Text>
                 <View>
-                    <Text>{ restaurant.rating }</Text>
-                    <Text>{ restaurant.price }</Text>
+                    <Text style={ styles.info }>{ restaurant.rating }</Text>
+                    <Text style={ styles.money }>{ restaurant.price }</Text>
                 </View>
             </View>
         </View>
@@ -42,4 +42,28 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         marginLeft: 10,
     },
+
+    infoContainer: {
+        flex: 1,
+        paddingHorizontal: 10,
+    },
+
+    header: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginBottom: 4,
+    },
+
+    info: {
+        flexDirection: "row",
+    },
+
+    rating: {
+        marginRight: 20,
+    },
+
+    money: {
+        color: "gold",
+    },
+
 });
