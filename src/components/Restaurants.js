@@ -56,7 +56,7 @@ export default function Restaurants({ term }) {
         renderItem={({ item }) => (
           <RestaurantItem restaurant={ item } />
         )}
-        sc
+        
       />
     </View>
   );
